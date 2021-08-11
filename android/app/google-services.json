@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "653179736812",
+    "project_id": "kwayes-a3377",
+    "storage_bucket": "kwayes-a3377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653179736812:android:49e94d0f9436bd4f4a8bc9",
+        "android_client_info": {
+          "package_name": "jameel.kwayes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653179736812-763afs0om9b2n8v009d4duogc5vrblk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC23SI1yOc4BxYctA6pCVbSkzXvUbHWEDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653179736812-763afs0om9b2n8v009d4duogc5vrblk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

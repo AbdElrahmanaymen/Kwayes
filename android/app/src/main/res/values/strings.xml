@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">kwayes</string>
+    <string name="facebook_app_id">891111521503573</string>
+    <string name="fb_login_protocol_scheme">fb891111521503573</string>
+</resources>

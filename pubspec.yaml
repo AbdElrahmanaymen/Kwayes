@@ -1,0 +1,52 @@
+name: kwayes
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  provider: ^5.0.0
+  firebase_core: ^1.0.2
+  cloud_firestore: ^1.0.3
+  firebase_auth: 
+  google_sign_in: ^5.0.7
+  flutter_facebook_auth: ^3.5.0
+  shared_preferences: ^2.0.5
+  flutter_svg: ^0.22.0
+  flutter_svg_provider: ^0.1.9
+  the_apple_sign_in: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/logo/logo.png
+    - assets/images/icons/
+    - lib/lang/ar.json
+    - lib/lang/en.json
+
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/roboto/Roboto-Medium.ttf
+          weight: 500
+    - family: DIN
+      fonts:
+        - asset: assets/fonts/din/DINNextLTArabicRegular.ttf
+        - asset: assets/fonts/din/DINMedium.ttf
+          weight: 500
+
