@@ -29,5 +29,9 @@
     "HomeNavigationBar": "الرئيسية",
     "NotificationNavigationBar": "الاشعارات",
     "MessageNavigationBar": "الرسائل",
-    "ProfileNavigationBar": "حسابي"
+    "ProfileNavigationBar": "حسابي",
+    "MenFilter": "أزياء رجالية",
+    "WomenFilter": "ملابس نسائية",
+    "SmartphoneFilter": "الهواتف الذكية",
+    "MultimediaFilter": "الوسائط المتعدده"
 }
