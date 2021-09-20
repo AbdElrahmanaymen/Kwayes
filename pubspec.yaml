@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-version: 1.0.0+9
+version: 1.0.0+10
 environment:
   sdk: ">=2.9.0 <3.0.0"
 
@@ -28,6 +28,8 @@ dependencies:
   geocoding: ^2.0.1
   swipe_to: ^0.0.1+8
   better_player: ^0.0.73
+  persistent_bottom_nav_bar: ^4.0.2
+
 
 
 
