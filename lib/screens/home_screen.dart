@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
-        height: 65,
+        height: 70,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -111,266 +111,270 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              MaterialButton(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GradientIcon(
-                      (currentTab == 0)
-                          ? 'assets/images/icons/home.png'
-                          : 'assets/images/icons/home_unselected.png',
-                      24,
-                      LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 0)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 0)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GradientText(
-                      getTranslated(context, 'HomeNavigationBar'),
-                      TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                          fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
-                          fontWeight: FontWeight.w500),
-                      gradient: LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 0)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 0)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                MaterialButton(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GradientIcon(
+                        (currentTab == 0)
+                            ? 'assets/images/icons/home.png'
+                            : 'assets/images/icons/home_unselected.png',
+                        24,
+                        LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 0)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 0)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+                        getTranslated(context, 'HomeNavigationBar'),
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 0)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 0)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      currentTab = 0;
+                      currentScreen = DashBoardScreen();
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    currentTab = 0;
-                    currentScreen = DashBoardScreen();
-                  });
-                },
-              ),
-              MaterialButton(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GradientIcon(
-                      (currentTab == 1)
-                          ? 'assets/images/icons/notification.png'
-                          : 'assets/images/icons/notification_unselected.png',
-                      24,
-                      LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 1)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 1)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GradientText(
-                      getTranslated(context, 'NotificationNavigationBar'),
-                      TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                          fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
-                          fontWeight: FontWeight.w500),
-                      gradient: LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 1)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 1)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                  ],
+                MaterialButton(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GradientIcon(
+                        (currentTab == 1)
+                            ? 'assets/images/icons/notification.png'
+                            : 'assets/images/icons/notification_unselected.png',
+                        24,
+                        LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+                        getTranslated(context, 'NotificationNavigationBar'),
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      currentTab = 1;
+                      currentScreen = NotificationsScreen();
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    currentTab = 1;
-                    currentScreen = NotificationsScreen();
-                  });
-                },
-              ),
-              Container(
-                child: GradientIcon(
-                  'assets/images/icons/messages.png',
-                  24,
-                  LinearGradient(
-                      transform: GradientRotation(-180 * (math.pi / 180)),
-                      begin: Alignment(1.396263599395752, 0.2368917167186737),
-                      end: Alignment(-0.2368917167186737, 0.07294762879610062),
-                      colors: [Colors.white, Colors.white]),
+                Container(
+                  child: GradientIcon(
+                    'assets/images/icons/messages.png',
+                    24,
+                    LinearGradient(
+                        transform: GradientRotation(-180 * (math.pi / 180)),
+                        begin: Alignment(1.396263599395752, 0.2368917167186737),
+                        end:
+                            Alignment(-0.2368917167186737, 0.07294762879610062),
+                        colors: [Colors.white, Colors.white]),
+                  ),
                 ),
-              ),
-              MaterialButton(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GradientIcon(
-                      (currentTab == 2)
-                          ? 'assets/images/icons/messages.png'
-                          : 'assets/images/icons/messages_unselected.png',
-                      24,
-                      LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 2)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 2)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GradientText(
-                      getTranslated(context, 'MessageNavigationBar'),
-                      TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                          fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
-                          fontWeight: FontWeight.w500),
-                      gradient: LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 2)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 2)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                  ],
+                MaterialButton(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GradientIcon(
+                        (currentTab == 2)
+                            ? 'assets/images/icons/messages.png'
+                            : 'assets/images/icons/messages_unselected.png',
+                        24,
+                        LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+                        getTranslated(context, 'MessageNavigationBar'),
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      currentTab = 2;
+                      currentScreen = MessagesScreen();
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    currentTab = 2;
-                    currentScreen = MessagesScreen();
-                  });
-                },
-              ),
-              MaterialButton(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GradientIcon(
-                      (currentTab == 3)
-                          ? 'assets/images/icons/profile.png'
-                          : 'assets/images/icons/profile_unselected.png',
-                      24,
-                      LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 3)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 3)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GradientText(
-                      getTranslated(context, 'ProfileNavigationBar'),
-                      TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
-                          fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
-                          fontWeight: FontWeight.w500),
-                      gradient: LinearGradient(
-                          transform: GradientRotation(-180 * (math.pi / 180)),
-                          begin:
-                              Alignment(1.396263599395752, 0.2368917167186737),
-                          end: Alignment(
-                              -0.2368917167186737, 0.07294762879610062),
-                          colors: [
-                            (currentTab == 3)
-                                ? Color.fromRGBO(
-                                    149, 46, 191, 0.9800000190734863)
-                                : Color(0xFF484451),
-                            (currentTab == 3)
-                                ? Color.fromRGBO(214, 41, 118, 1)
-                                : Color(0xFF484451)
-                          ]),
-                    ),
-                  ],
+                MaterialButton(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GradientIcon(
+                        (currentTab == 3)
+                            ? 'assets/images/icons/profile.png'
+                            : 'assets/images/icons/profile_unselected.png',
+                        24,
+                        LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+                        getTranslated(context, 'ProfileNavigationBar'),
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      currentTab = 3;
+                      currentScreen = ProfileScreen();
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    currentTab = 3;
-                    currentScreen = ProfileScreen();
-                  });
-                },
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
