@@ -178,112 +178,112 @@ class _AdDetailsImageState extends State<AdDetailsImage>
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: SlideTransition(
-                  position: offset,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 110),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width - 40,
-                      height: 343,
-                      decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromRGBO(
-                                    112, 107, 107, 0.23999999463558197),
-                                offset: Offset(0, 4),
-                                blurRadius: 20)
-                          ],
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('$category > $subCategory',
-                                style: TextStyle(
-                                    color: Color(0xFF716B6B),
-                                    fontSize: 12,
-                                    fontFamily: 'Roboto',
-                                    fontWeight: FontWeight.w500)),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(title,
-                                      style: TextStyle(
-                                          color: Color(0xFFA229F2),
-                                          fontSize: 14,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w500)),
-                                  Text(price,
-                                      style: TextStyle(
-                                          color: Color(0xFFA229F2),
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w500))
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 10),
-                              child: Container(
-                                width:
-                                    (MediaQuery.of(context).size.width - 40) /
-                                        1.5,
-                                child: Text(description,
-                                    style: TextStyle(
-                                      color: Color(0xFFA3A3A3),
-                                      fontSize: 12,
-                                      fontFamily: 'Roboto',
-                                    )),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 20),
-                              child: Text(address,
-                                  style: TextStyle(
-                                      color: Color(0xFF716B6B),
-                                      fontSize: 12,
-                                      fontFamily: 'Roboto',
-                                      fontWeight: FontWeight.w500)),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                height: 158,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(16),
-                                  child: GoogleMap(
-                                    initialCameraPosition: CameraPosition(
-                                        target: _initialcameraposition),
-                                    myLocationButtonEnabled: false,
-                                    mapToolbarEnabled: false,
-                                    zoomControlsEnabled: false,
-                                    zoomGesturesEnabled: false,
-                                    tiltGesturesEnabled: false,
-                                    rotateGesturesEnabled: false,
-                                    scrollGesturesEnabled: false,
-                                    mapType: MapType.normal,
-                                    onMapCreated: _onMapCreated,
-                                    myLocationEnabled: true,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.bottomCenter,
+              //   child: SlideTransition(
+              //     position: offset,
+              //     child: Padding(
+              //       padding: const EdgeInsets.only(bottom: 110),
+              //       child: Container(
+              //         width: MediaQuery.of(context).size.width - 40,
+              //         height: 343,
+              //         decoration: BoxDecoration(
+              //             boxShadow: [
+              //               BoxShadow(
+              //                   color: Color.fromRGBO(
+              //                       112, 107, 107, 0.23999999463558197),
+              //                   offset: Offset(0, 4),
+              //                   blurRadius: 20)
+              //             ],
+              //             color: Colors.white,
+              //             borderRadius: BorderRadius.circular(16)),
+              //         child: Padding(
+              //           padding: const EdgeInsets.symmetric(
+              //               horizontal: 20, vertical: 20),
+              //           child: Column(
+              //             crossAxisAlignment: CrossAxisAlignment.start,
+              //             children: [
+              //               Text('$category > $subCategory',
+              //                   style: TextStyle(
+              //                       color: Color(0xFF716B6B),
+              //                       fontSize: 12,
+              //                       fontFamily: 'Roboto',
+              //                       fontWeight: FontWeight.w500)),
+              //               Padding(
+              //                 padding: const EdgeInsets.only(top: 20),
+              //                 child: Row(
+              //                   crossAxisAlignment: CrossAxisAlignment.center,
+              //                   mainAxisAlignment:
+              //                       MainAxisAlignment.spaceBetween,
+              //                   children: [
+              //                     Text(title,
+              //                         style: TextStyle(
+              //                             color: Color(0xFFA229F2),
+              //                             fontSize: 14,
+              //                             fontFamily: 'Roboto',
+              //                             fontWeight: FontWeight.w500)),
+              //                     Text(price,
+              //                         style: TextStyle(
+              //                             color: Color(0xFFA229F2),
+              //                             fontSize: 16,
+              //                             fontFamily: 'Roboto',
+              //                             fontWeight: FontWeight.w500))
+              //                   ],
+              //                 ),
+              //               ),
+              //               Padding(
+              //                 padding: EdgeInsets.only(top: 10),
+              //                 child: Container(
+              //                   width:
+              //                       (MediaQuery.of(context).size.width - 40) /
+              //                           1.5,
+              //                   child: Text(description,
+              //                       style: TextStyle(
+              //                         color: Color(0xFFA3A3A3),
+              //                         fontSize: 12,
+              //                         fontFamily: 'Roboto',
+              //                       )),
+              //                 ),
+              //               ),
+              //               Padding(
+              //                 padding: EdgeInsets.only(top: 20),
+              //                 child: Text(address,
+              //                     style: TextStyle(
+              //                         color: Color(0xFF716B6B),
+              //                         fontSize: 12,
+              //                         fontFamily: 'Roboto',
+              //                         fontWeight: FontWeight.w500)),
+              //               ),
+              //               Padding(
+              //                 padding: const EdgeInsets.only(top: 20),
+              //                 child: Container(
+              //                   height: 158,
+              //                   child: ClipRRect(
+              //                     borderRadius: BorderRadius.circular(16),
+              //                     child: GoogleMap(
+              //                       initialCameraPosition: CameraPosition(
+              //                           target: _initialcameraposition),
+              //                       myLocationButtonEnabled: false,
+              //                       mapToolbarEnabled: false,
+              //                       zoomControlsEnabled: false,
+              //                       zoomGesturesEnabled: false,
+              //                       tiltGesturesEnabled: false,
+              //                       rotateGesturesEnabled: false,
+              //                       scrollGesturesEnabled: false,
+              //                       mapType: MapType.normal,
+              //                       onMapCreated: _onMapCreated,
+              //                       myLocationEnabled: true,
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
