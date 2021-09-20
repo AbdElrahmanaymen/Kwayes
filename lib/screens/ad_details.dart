@@ -2,11 +2,7 @@ import 'package:kwayes/screens/seller_screen.dart';
 import 'package:video_player/video_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:geocoding/geocoding.dart';
-=======
-import 'package:geocoder/geocoder.dart';
->>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class AdDetails extends StatefulWidget {
@@ -52,22 +48,12 @@ class _AdDetailsState extends State<AdDetails>
   void _onMapCreated(GoogleMapController _cntlr, String address) async {
     _googlecontroller = _cntlr;
     //final query = "1600 Amphiteatre Parkway, Mountain View";
-<<<<<<< HEAD
     var addresses = await locationFromAddress(address);
-=======
-    var addresses = await Geocoder.local.findAddressesFromQuery(address);
->>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
     var first = addresses.first;
     _googlecontroller.animateCamera(
       CameraUpdate.newCameraPosition(
         CameraPosition(
-<<<<<<< HEAD
             target: LatLng(first.latitude, first.longitude), zoom: 15),
-=======
-            target:
-                LatLng(first.coordinates.latitude, first.coordinates.longitude),
-            zoom: 15),
->>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
       ),
     );
   }
@@ -364,18 +350,10 @@ class _AdDetailsState extends State<AdDetails>
                                 stream: loadAdProfile(user),
                                 builder: (context, snapshot) {
                                   if (snapshot.hasData) {
-<<<<<<< HEAD
                                     var data = snapshot.data.data() as Map;
                                     //String email = data['Email'];
                                     String name = data['Name'];
                                     String photo = data['photo_url'];
-=======
-                                    String email =
-                                        snapshot.data.data()['Email'];
-                                    String name = snapshot.data.data()['Name'];
-                                    String photo =
-                                        snapshot.data.data()['photo_url'];
->>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
                                     return Padding(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 20),
