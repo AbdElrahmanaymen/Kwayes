@@ -25,7 +25,7 @@ dependencies:
   video_player: ^2.2.4
   visibility_detector: ^0.2.0
   firebase_storage: ^10.0.3
-  google_maps_flutter: ^2.0.10
+  google_maps_flutter: 
   geocoding: ^2.0.1
   swipe_to: ^0.0.1+8
   better_player: ^0.0.73
