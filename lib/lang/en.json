@@ -29,5 +29,9 @@
     "HomeNavigationBar": "Home",
     "NotificationNavigationBar": "Notification",
     "MessageNavigationBar": "Messages",
-    "ProfileNavigationBar": "Profile"
+    "ProfileNavigationBar": "Profile",
+    "MenFilter": "Men's Fashion",
+    "WomenFilter": "Women's Style",
+    "SmartphoneFilter": "Smartphone",
+    "MultimediaFilter": "Multimedia"
 }
