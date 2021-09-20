@@ -35,6 +35,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         .get()
         .then((QuerySnapshot snapshot) {
       for (var doc in snapshot.docs) {
+<<<<<<< HEAD
         var data = doc.data() as Map;
 
         ads.add(AdMinimizedInfo(
@@ -43,6 +44,16 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             video: data['Video'],
             category: data['Category'],
             url: (data['Video'] == true) ? data['Video 1'] : data['Photo 1']));
+=======
+        ads.add(AdMinimizedInfo(
+            description: doc.data()['Description'],
+            docId: doc.id,
+            video: doc.data()['Video'],
+            category: doc.data()['Category'],
+            url: (doc.data()['Video'] == true)
+                ? doc.data()['Video 1']
+                : doc.data()['Photo 1']));
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
       }
 
       sorted = ads;

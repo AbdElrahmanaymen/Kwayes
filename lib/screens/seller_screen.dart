@@ -44,12 +44,22 @@ class _SellerScreenState extends State<SellerScreen> {
         .get()
         .then((QuerySnapshot snapshot) {
       for (var doc in snapshot.docs) {
+<<<<<<< HEAD
         var data = doc.data() as Map;
         ads.add(AdMinimizedInfo(
             description: data['Description'],
             docId: doc.id,
             video: data['Video'],
             url: (data['Video'] == true) ? data['Video 1'] : data['Photo 1']));
+=======
+        ads.add(AdMinimizedInfo(
+            description: doc.data()['Description'],
+            docId: doc.id,
+            video: doc.data()['Video'],
+            url: (doc.data()['Video'] == true)
+                ? doc.data()['Video 1']
+                : doc.data()['Photo 1']));
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
       }
 
       setState(() {

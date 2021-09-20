@@ -1,7 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:geocoding/geocoding.dart';
+=======
+import 'package:geocoder/geocoder.dart';
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kwayes/screens/chat_screen.dart';
 import 'package:kwayes/screens/seller_screen.dart';
@@ -40,12 +44,22 @@ class _AdDetailsImageState extends State<AdDetailsImage>
   void _onMapCreated(GoogleMapController _cntlr) async {
     _controller = _cntlr;
     //final query = "1600 Amphiteatre Parkway, Mountain View";
+<<<<<<< HEAD
     var addresses = await locationFromAddress(address);
+=======
+    var addresses = await Geocoder.local.findAddressesFromQuery(address);
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
     var first = addresses.first;
     _controller.animateCamera(
       CameraUpdate.newCameraPosition(
         CameraPosition(
+<<<<<<< HEAD
             target: LatLng(first.latitude, first.longitude), zoom: 15),
+=======
+            target:
+                LatLng(first.coordinates.latitude, first.coordinates.longitude),
+            zoom: 15),
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
       ),
     );
   }
@@ -56,6 +70,7 @@ class _AdDetailsImageState extends State<AdDetailsImage>
         .doc(docId)
         .get()
         .then((DocumentSnapshot snapshot) {
+<<<<<<< HEAD
       var data = snapshot.data() as Map;
 
       setState(() {
@@ -66,6 +81,16 @@ class _AdDetailsImageState extends State<AdDetailsImage>
         price = data['Price'];
         title = data['Title'];
         user = data['User'];
+=======
+      setState(() {
+        address = snapshot.data()['Address'];
+        category = snapshot.data()['Category'];
+        description = snapshot.data()['Description'];
+        subCategory = snapshot.data()['Sub Category'];
+        price = snapshot.data()['Price'];
+        title = snapshot.data()['Title'];
+        user = snapshot.data()['User'];
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
       });
     });
   }
@@ -338,9 +363,15 @@ class _AdDetailsImageState extends State<AdDetailsImage>
                             stream: loadAdProfile(user),
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
+<<<<<<< HEAD
                                 var data = snapshot.data.data() as Map;
                                 String name = data['Name'];
                                 String photo = data['photo_url'];
+=======
+                                String name = snapshot.data.data()['Name'];
+                                String photo =
+                                    snapshot.data.data()['photo_url'];
+>>>>>>> 728352692394a5334eb2908d623c6819ff7c48ec
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20),
