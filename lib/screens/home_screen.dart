@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+import 'package:camera/camera.dart';
+>>>>>>> parent of 80a976c (undo)
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kwayes/localization/localization_constants.dart';
+import 'package:kwayes/main.dart';
 import 'package:kwayes/screens/Dashboard_screen.dart';
 import 'package:kwayes/screens/add_screen.dart';
 import 'package:kwayes/screens/messages_screen.dart';
@@ -10,22 +15,63 @@ import 'package:kwayes/screens/profile_screen.dart';
 import 'package:kwayes/widgets/gradient_icon.dart';
 import 'package:kwayes/widgets/gradient_text.dart';
 import 'dart:math' as math;
+<<<<<<< HEAD
+=======
+
+import 'package:kwayes/widgets/navigation_drawer_widget.dart';
+>>>>>>> parent of 80a976c (undo)
 
 class HomeScreen extends StatefulWidget {
+  final List<CameraDescription> cameras;
+
+  HomeScreen({@required this.cameras});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+<<<<<<< HEAD
+=======
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+>>>>>>> parent of 80a976c (undo)
 class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int currentTab = 0;
   final List<Widget> screens = [
-    DashBoardScreen(),
+    DashBoardScreen(
+      scaffoldKey: _scaffoldKey,
+    ),
     NotificationsScreen(),
     MessagesScreen(),
     ProfileScreen()
   ];
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = DashBoardScreen();
+  Widget currentScreen = DashBoardScreen(scaffoldKey: _scaffoldKey);
+
+  @override
+  void initState() {
+    user = auth.currentUser;
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _myStatus('online');
+  }
+
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  User user;
+
+  _myStatus(String status) {
+    _firestore.collection('users').doc(user.email).update({'Status': status});
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _myStatus('online');
+    } else {
+      _myStatus('offline');
+    }
+  }
 
   @override
   void initState() {
@@ -56,6 +102,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;
     return Scaffold(
+<<<<<<< HEAD
+=======
+      key: _scaffoldKey,
+      drawer: NavigationDrawerWidget(),
+>>>>>>> parent of 80a976c (undo)
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
@@ -92,11 +143,18 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             Navigator.push(
                 context,
                 MaterialPageRoute(
+<<<<<<< HEAD
                     builder: (BuildContext context) => AddScreen()));
+=======
+                    builder: (BuildContext context) => AddScreen(
+                          cameras: cameras,
+                        )));
+>>>>>>> parent of 80a976c (undo)
           },
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+<<<<<<< HEAD
       bottomNavigationBar: Container(
         height: 70,
         decoration: BoxDecoration(
@@ -113,6 +171,26 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Padding(
             padding: const EdgeInsets.only(bottom: 5),
+=======
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 0,
+        shape: AutomaticNotchedShape(
+            RoundedRectangleBorder(), StadiumBorder(side: BorderSide())),
+        child: Container(
+          height: 65,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+>>>>>>> parent of 80a976c (undo)
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.max,
@@ -174,7 +252,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   onPressed: () {
                     setState(() {
                       currentTab = 0;
+<<<<<<< HEAD
                       currentScreen = DashBoardScreen();
+=======
+                      currentScreen =
+                          DashBoardScreen(scaffoldKey: _scaffoldKey);
+>>>>>>> parent of 80a976c (undo)
                     });
                   },
                 ),
@@ -238,6 +321,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       currentScreen = NotificationsScreen();
                     });
                   },
+<<<<<<< HEAD
                 ),
                 Container(
                   child: GradientIcon(
@@ -251,6 +335,21 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         colors: [Colors.white, Colors.white]),
                   ),
                 ),
+=======
+                ),
+                Container(
+                  child: GradientIcon(
+                    'assets/images/icons/messages.png',
+                    24,
+                    LinearGradient(
+                        transform: GradientRotation(-180 * (math.pi / 180)),
+                        begin: Alignment(1.396263599395752, 0.2368917167186737),
+                        end:
+                            Alignment(-0.2368917167186737, 0.07294762879610062),
+                        colors: [Colors.white, Colors.white]),
+                  ),
+                ),
+>>>>>>> parent of 80a976c (undo)
                 MaterialButton(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

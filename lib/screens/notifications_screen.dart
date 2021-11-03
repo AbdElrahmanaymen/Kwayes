@@ -1,10 +1,14 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 // import 'package:kwayes/model/ad_minimized.dart';
 // import 'package:kwayes/model/video_list_data.dart';
 // import 'package:kwayes/services/ReusableVideoListController.dart';
 // import 'package:kwayes/widgets/ad_minimized_video.dart';
 // import 'package:kwayes/widgets/resuable_video_player.dart';
+=======
+import 'package:kwayes/localization/localization_constants.dart';
+>>>>>>> parent of 80a976c (undo)
 
 class NotificationsScreen extends StatefulWidget {
   @override
@@ -65,6 +69,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       backgroundColor: Colors.white,
       // body: Container(
@@ -125,6 +130,29 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
       //     ],
       //   ),
       // ),
+=======
+    var lang = Localizations.localeOf(context).languageCode;
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 32),
+              child: Center(
+                  child: Text(
+                getTranslated(context, 'NotificationNavigationBar'),
+                strutStyle: StrutStyle(
+                  forceStrutHeight: lang == 'ar' ? true : false,
+                ),
+                style: TextStyle(
+                    fontFamily: lang == 'ar' ? 'DIN' : 'Roboto', fontSize: 24),
+              )),
+            )
+          ],
+        ),
+      ),
+>>>>>>> parent of 80a976c (undo)
     );
   }
 }
