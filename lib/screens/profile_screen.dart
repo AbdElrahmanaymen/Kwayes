@@ -10,18 +10,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFFE5E5E5),
-        body: Column(
-          children: [
-            IconButton(
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-                icon: Icon(Icons.logout))
-          ],
-        ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          IconButton(
+              onPressed: () async {
+                await _auth.signOut();
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
     );
   }

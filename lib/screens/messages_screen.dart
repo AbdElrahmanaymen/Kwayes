@@ -9,7 +9,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE5E5E5),
+      backgroundColor: Colors.white,
     );
   }
 }
