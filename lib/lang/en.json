@@ -33,9 +33,6 @@
     "MenFilter": "Men's Fashion",
     "WomenFilter": "Women's Style",
     "SmartphoneFilter": "Smartphone",
-<<<<<<< HEAD
-    "MultimediaFilter": "Multimedia"
-=======
     "MultimediaFilter": "Multimedia",
     "AninmalsFilter": "Animals",
     "MotorcyclesFilter": "Motorcycles",
@@ -94,5 +91,4 @@
     "AddMessageOption": "Add Message Option",
     "NextBtn": "Next",
     "NoAds": "No ads in the meantime"
->>>>>>> parent of 80a976c (undo)
 }
