@@ -117,14 +117,20 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                           ),
                         ],
                         gradient: LinearGradient(
-                            transform: GradientRotation(-180 * (math.pi / 180)),
-                            begin: Alignment(
-                                1.396263599395752, 0.2368917167186737),
-                            end: Alignment(
-                                -0.2368917167186737, 0.07294762879610062),
+                            begin: Alignment(1.0, 2.0),
+                            end: Alignment(-1.0, -2.0),
+                            transform: GradientRotation(math.pi / 4),
+                            stops: [
+                              0.0,
+                              0.25,
+                              0.75,
+                              1
+                            ],
                             colors: [
-                              Color.fromRGBO(149, 46, 191, 0.9800000190734863),
-                              Color.fromRGBO(214, 41, 118, 1)
+                              Color(0xFF4F5BD5),
+                              Color(0xFFA72DAB),
+                              Color(0xFFD62976),
+                              Color(0xFFFA7E1E)
                             ]),
                         borderRadius: BorderRadius.circular(30),
                       ),

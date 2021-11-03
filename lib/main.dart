@@ -1,4 +1,3 @@
-import 'package:camera/camera.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:kwayes/localization/demo_localization.dart';
@@ -14,11 +13,9 @@ import 'package:kwayes/wrapper.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-List<CameraDescription> cameras;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  cameras = await availableCameras();
   runApp(MyApp());
 }
 
@@ -29,9 +26,7 @@ var routes = <String, WidgetBuilder>{
   '/ForgetPassowrd': (BuildContext context) => ForgetPasswordScreen(),
   '/SucccessForgetPassowrd': (BuildContext context) =>
       SucccessForgetPasswordScreen(),
-  '/Wrapper': (BuildContext context) => Wrapper(
-        cameras: cameras,
-      ),
+  '/Wrapper': (BuildContext context) => Wrapper(),
 };
 
 class MyApp extends StatefulWidget {

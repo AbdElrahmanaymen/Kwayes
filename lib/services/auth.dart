@@ -74,7 +74,6 @@ class AuthService {
         idToken: String.fromCharCodes(appleIdCredential.identityToken),
         accessToken: String.fromCharCodes(appleIdCredential.authorizationCode),
       );
-      // ignore: non_constant_identifier_names
       UserCredential AuthResult = await _auth.signInWithCredential(credential);
       User user = AuthResult.user;
       DocumentSnapshot userDoc =
