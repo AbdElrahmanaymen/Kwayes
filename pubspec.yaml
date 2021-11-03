@@ -3,48 +3,16 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-version: 1.0.0+11
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
 version: 1.0.0+2
 
->>>>>>> parent of 80a976c (undo)
 environment:
-  sdk: ">=2.9.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-<<<<<<< HEAD
-  cupertino_icons: ^1.0.3
-  provider: ^6.0.0
-  firebase_core: ^1.6.0
-  cloud_firestore: ^2.5.3
-  firebase_auth: ^3.1.1
-  google_sign_in: ^5.1.0
-  flutter_facebook_auth: ^3.5.1
-  the_apple_sign_in: ^1.1.1
-  flutter_svg: ^0.22.0
-  video_player: ^2.2.4
-  visibility_detector: ^0.2.0
-  firebase_storage: ^10.0.3
-  google_maps_flutter: ^2.0.10
-  geocoding: ^2.0.1
-  swipe_to: ^0.0.1+8
-  better_player: ^0.0.73
-  persistent_bottom_nav_bar: ^4.0.2
-
-
-
-=======
   cupertino_icons: ^1.0.2
   provider: ^5.0.0
   firebase_core: ^1.0.2
@@ -68,13 +36,6 @@ dependencies:
   geolocator: ^5.3.1
   cached_network_image: ^3.1.0
   file_picker: ^3.0.2+2
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
 
 dev_dependencies:
   flutter_test:
