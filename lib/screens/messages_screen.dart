@@ -9,16 +9,6 @@ class MessagesScreen extends StatefulWidget {
 class _MessagesScreenState extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return Scaffold(
-      backgroundColor: Colors.white,
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
     var lang = Localizations.localeOf(context).languageCode;
     return SafeArea(
       child: Scaffold(
@@ -40,13 +30,6 @@ class _MessagesScreenState extends State<MessagesScreen> {
           ],
         ),
       ),
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
     );
   }
 }

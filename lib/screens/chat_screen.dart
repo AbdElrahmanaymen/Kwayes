@@ -80,30 +80,10 @@ class _ChatScreenState extends State<ChatScreen> {
           .collection('users')
           .doc(myUser)
           .get()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-          .then((DocumentSnapshot documentSnapshot) {
-        var data = documentSnapshot.data() as Map;
-        username = data['Name'];
-        photo = data['photo_url'];
-      });
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
           .then((DocumentSnapshot documentSnapshot) => {
                 username = documentSnapshot.data()['Name'],
                 photo = documentSnapshot.data()['photo_url']
               });
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
       Map<String, dynamic> messageMap = {
         "message": messageController.text,
         "sendBy": myUser,
@@ -175,24 +155,8 @@ class _ChatScreenState extends State<ChatScreen> {
                   stream: getChatRoom(chatRoomId),
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      var data = snapshot.data.data() as Map;
-
-                      String user = data['chatRoomId']
-=======
                       String user = snapshot.data
                           .data()['chatRoomId']
->>>>>>> parent of 80a976c (undo)
-=======
-                      String user = snapshot.data
-                          .data()['chatRoomId']
->>>>>>> parent of 80a976c (undo)
-=======
-                      String user = snapshot.data
-                          .data()['chatRoomId']
->>>>>>> parent of 80a976c (undo)
                           .toString()
                           .replaceAll("_", "")
                           .replaceAll(myUser, "");
@@ -204,25 +168,8 @@ class _ChatScreenState extends State<ChatScreen> {
                             return Center(
                               child: CircularProgressIndicator(),
                             );
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                          var data = snapshot.data.data() as Map;
-
-                          String name = data['Name'];
-                          String photoUrl = data['photo_url'];
-=======
                           String name = snapshot.data.data()['Name'];
                           String photoUrl = snapshot.data.data()['photo_url'];
->>>>>>> parent of 80a976c (undo)
-=======
-                          String name = snapshot.data.data()['Name'];
-                          String photoUrl = snapshot.data.data()['photo_url'];
->>>>>>> parent of 80a976c (undo)
-=======
-                          String name = snapshot.data.data()['Name'];
-                          String photoUrl = snapshot.data.data()['photo_url'];
->>>>>>> parent of 80a976c (undo)
                           return Container(
                             width: 206,
                             height: 61,
@@ -473,19 +420,7 @@ class MessageTile extends StatelessWidget {
                       (dateDays != 0)
                           ? '$dateDays days ago'
                           : (dateHours != 0)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                              ? '$dateHours days ago'
-=======
                               ? '$dateHours hours ago'
->>>>>>> parent of 80a976c (undo)
-=======
-                              ? '$dateHours hours ago'
->>>>>>> parent of 80a976c (undo)
-=======
-                              ? '$dateHours hours ago'
->>>>>>> parent of 80a976c (undo)
                               : (dateMins != 0)
                                   ? '$dateMins mins ago'
                                   : 'just now',

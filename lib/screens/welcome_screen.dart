@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kwayes/localization/localization_constants.dart';
+import 'package:kwayes/model/language.dart';
 import 'dart:math' as math;
 
 import 'package:kwayes/services/auth.dart';
@@ -12,6 +13,8 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final AuthService _auth = AuthService();
+  List<Language> languages;
+  Language selectedLang;
   @override
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;

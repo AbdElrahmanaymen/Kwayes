@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-
-class AddScreen extends StatefulWidget {
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -19,29 +8,11 @@ import 'package:kwayes/screens/prepublish_screen.dart';
 class AddScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
   AddScreen({@required this.cameras});
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   @override
   _AddScreenState createState() => _AddScreenState();
 }
 
 class _AddScreenState extends State<AddScreen> {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   CameraController _cameraController;
 
   Future<void> cameraValue;
@@ -188,12 +159,5 @@ class _AddScreenState extends State<AddScreen> {
             type: AdType.image,
           ),
         ));
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   }
 }

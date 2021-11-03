@@ -50,23 +50,6 @@ class _ProfileScreenState extends State<ProfileScreen>
   int tab = 0;
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          IconButton(
-              onPressed: () async {
-                await _auth.signOut();
-              },
-              icon: Icon(Icons.logout))
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
     var lang = Localizations.localeOf(context).languageCode;
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -714,13 +697,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                       ));
                 }
               })
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
         ],
       ),
     );

@@ -1,104 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-import 'package:kwayes/model/ad_minimized.dart';
-import 'package:kwayes/model/video_list_data.dart';
-import 'dart:math' as math;
-
-import 'package:kwayes/services/ReusableVideoListController.dart';
-import 'package:kwayes/services/firebase_storage.dart';
-import 'package:kwayes/widgets/ad_minimized_image.dart';
-import 'package:kwayes/widgets/ad_minimized_video.dart';
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
 import 'package:kwayes/model/ad.dart';
 import 'dart:math' as math;
 
 import 'package:kwayes/widgets/ad_minimized.dart';
 import 'package:kwayes/widgets/gradient_icon.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
 
 class SellerScreen extends StatefulWidget {
   final String email;
   final String name;
   final String photo;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-  SellerScreen(this.email, this.name, this.photo);
-
-  @override
-  _SellerScreenState createState() =>
-      _SellerScreenState(email: email, name: name, photo: photo);
-}
-
-class _SellerScreenState extends State<SellerScreen> {
-  String email, name, photo;
-
-  _SellerScreenState(
-      {@required this.email, @required this.name, @required this.photo});
-
-  ReusableVideoListController videoListController;
-  List<VideoListData> dataList = [];
-  final ScrollController _scrollController = ScrollController();
-  int lastMilli = DateTime.now().millisecondsSinceEpoch;
-  bool _canBuildVideo = true;
-
-  List<AdMinimizedInfo> ads = [];
-
-  FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  loadAds() async {
-    return _firestore
-        .collection('ads')
-        .where('User', isEqualTo: email)
-        .get()
-        .then((QuerySnapshot snapshot) {
-      for (var doc in snapshot.docs) {
-        var data = doc.data() as Map;
-        ads.add(AdMinimizedInfo(
-            description: data['Description'],
-            docId: doc.id,
-            video: data['Video'],
-            url: (data['Video'] == true) ? data['Video 1'] : data['Photo 1']));
-      }
-
-      setState(() {
-        videoListController = ReusableVideoListController(count: ads.length);
-      });
-
-      _setupData();
-    });
-  }
-
-  void _setupData() async {
-    for (int index = 0; index < ads.length; index++) {
-      String url = await downloadUrl(ads[index].url);
-      setState(() {
-        dataList.add(VideoListData(url));
-      });
-    }
-  }
-
-  bool _checkCanBuildVideo() {
-    return _canBuildVideo;
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   final String myUser;
   final bool isFollowing;
 
@@ -147,58 +58,18 @@ class _SellerScreenState extends State<SellerScreen> {
         .collection('ads')
         .where('User', isEqualTo: email)
         .snapshots();
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   }
 
   @override
   void initState() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    loadAds();
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    videoListController.dispose();
-    super.dispose();
-  }
-
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
     checkIfFollowing();
     super.initState();
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   Stream<DocumentSnapshot> loadSellerInfo(email) {
     return _firestore.collection('users').doc(email).snapshots();
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   handleFollowUser() {
     setState(() {
       isFollowing = true;
@@ -233,13 +104,6 @@ class _SellerScreenState extends State<SellerScreen> {
     });
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -293,60 +157,6 @@ class _SellerScreenState extends State<SellerScreen> {
                   StreamBuilder(
                     stream: loadSellerInfo(email),
                     builder: (context, snapshot) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                      String status = snapshot.data.data()['Status'];
-                      return Container(
-                        width: 77,
-                        height: 79,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.all(Radius.elliptical(77, 77)),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              top: 0,
-                              left: 0,
-                              child: Container(
-                                width: 77,
-                                height: 77,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(photo),
-                                      fit: BoxFit.fitWidth),
-                                  borderRadius: BorderRadius.all(
-                                      Radius.elliptical(77, 77)),
-                                ),
-                              ),
-                            ),
-                            Positioned(
-                              top: 62.5,
-                              left: 57.12,
-                              child: Container(
-                                width: 16.54,
-                                height: 16.54,
-                                decoration: new BoxDecoration(
-                                  color: (status == 'online')
-                                      ? Color(0xFF64D62F)
-                                      : Color(0xFFFAFAFB),
-                                  shape: BoxShape.circle,
-                                  border: new Border.all(
-                                    color: Color(0xFFFAFAFB),
-                                    width: 1.84,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
                       if (!snapshot.hasData) {
                         return Center(
                           child: CircularProgressIndicator(),
@@ -399,13 +209,6 @@ class _SellerScreenState extends State<SellerScreen> {
                           ),
                         );
                       }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
                     },
                   ),
                   Padding(
@@ -428,20 +231,6 @@ class _SellerScreenState extends State<SellerScreen> {
                         children: [
                           IconButton(
                               icon: ImageIcon(
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                AssetImage(
-                                    'assets/images/icons/add_friend.png'),
-                                color: Colors.white,
-                                size: 24,
-                              ),
-                              onPressed: () {}),
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
                                 AssetImage((isFollowing)
                                     ? 'assets/images/icons/check-circle.png'
                                     : 'assets/images/icons/add_friend.png'),
@@ -455,13 +244,6 @@ class _SellerScreenState extends State<SellerScreen> {
                                   handleFollowUser();
                                 }
                               }),
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
                           IconButton(
                               icon: ImageIcon(
                                 AssetImage('assets/images/icons/message.png'),
@@ -501,68 +283,6 @@ class _SellerScreenState extends State<SellerScreen> {
             SizedBox(
               height: 22,
             ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            NotificationListener<ScrollNotification>(
-              onNotification: (notification) {
-                final now = DateTime.now();
-                final timeDiff = now.millisecondsSinceEpoch - lastMilli;
-                if (notification is ScrollUpdateNotification) {
-                  final pixelsPerMilli = notification.scrollDelta / timeDiff;
-                  if (pixelsPerMilli.abs() > 1) {
-                    _canBuildVideo = false;
-                  } else {
-                    _canBuildVideo = true;
-                  }
-                  lastMilli = DateTime.now().millisecondsSinceEpoch;
-                }
-
-                if (notification is ScrollEndNotification) {
-                  _canBuildVideo = true;
-                  lastMilli = DateTime.now().millisecondsSinceEpoch;
-                }
-
-                return true;
-              },
-              child: GridView.builder(
-                scrollDirection: Axis.vertical,
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                cacheExtent: 1000,
-                addAutomaticKeepAlives: true,
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 10,
-                    crossAxisSpacing: 10,
-                    childAspectRatio: 2 / 3),
-                itemCount: dataList.length,
-                controller: _scrollController,
-                itemBuilder: (context, index) {
-                  VideoListData videoListData = dataList[index];
-                  return Hero(
-                    tag: ads[index].docId,
-                    child: (ads[index].video)
-                        ? AdMinimizedVideo(
-                            videoListData: videoListData,
-                            videoListController: videoListController,
-                            canBuildVideo: _checkCanBuildVideo,
-                            docId: ads[index].docId,
-                            index: index,
-                            text: ads[index].description,
-                          )
-                        : AdMinimizedImage(ads[index].description,
-                            videoListData.videoUrl, ads[index].docId),
-                  );
-                },
-              ),
-            ),
-=======
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
             StreamBuilder<QuerySnapshot>(
                 stream: loadSellerAds(),
                 builder: (context, snapshot) {
@@ -656,13 +376,6 @@ class _SellerScreenState extends State<SellerScreen> {
                     );
                   }
                 }),
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
-=======
->>>>>>> parent of 80a976c (undo)
             SizedBox(
               height: 32,
             ),

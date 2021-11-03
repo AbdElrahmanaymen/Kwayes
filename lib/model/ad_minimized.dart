@@ -1,8 +1,15 @@
+import 'package:kwayes/model/ad.dart';
+
 class AdMinimizedInfo {
   String description;
-  bool video;
+  AdType mediaType;
   String docId;
-  String url;
+  String media;
   String category;
-  AdMinimizedInfo({this.description, this.docId, this.video, this.url, this.category});
+  AdMinimizedInfo(
+      {this.description,
+      this.docId,
+      this.mediaType,
+      this.media,
+      this.category});
 }
