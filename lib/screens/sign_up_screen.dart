@@ -153,7 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         .hasMatch(_email)
                                     ? Image.asset(
                                         'assets/images/icons/correct.png')
-                                    : SvgPicture.asset(
+                                    : Image.asset(
                                         'assets/images/icons/wrong.png')
                                 : null,
                             errorBorder: UnderlineInputBorder(
@@ -310,20 +310,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ),
                             ],
                             gradient: LinearGradient(
-                                begin: Alignment(1.0, 2.0),
-                                end: Alignment(-1.0, -2.0),
-                                transform: GradientRotation(math.pi / 4),
-                                stops: [
-                                  0.0,
-                                  0.25,
-                                  0.75,
-                                  1
-                                ],
+                                transform:
+                                    GradientRotation(-180 * (math.pi / 180)),
+                                begin: Alignment(
+                                    1.396263599395752, 0.2368917167186737),
+                                end: Alignment(
+                                    -0.2368917167186737, 0.07294762879610062),
                                 colors: [
-                                  Color(0xFF4F5BD5),
-                                  Color(0xFFA72DAB),
-                                  Color(0xFFD62976),
-                                  Color(0xFFFA7E1E)
+                                  Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863),
+                                  Color.fromRGBO(214, 41, 118, 1)
                                 ]),
                             borderRadius: BorderRadius.circular(30),
                           ),
