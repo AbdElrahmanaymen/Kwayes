@@ -82,6 +82,7 @@ class _ChatScreenState extends State<ChatScreen> {
           .get()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           .then((DocumentSnapshot documentSnapshot) {
         var data = documentSnapshot.data() as Map;
         username = data['Name'];
@@ -90,11 +91,16 @@ class _ChatScreenState extends State<ChatScreen> {
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
           .then((DocumentSnapshot documentSnapshot) => {
                 username = documentSnapshot.data()['Name'],
                 photo = documentSnapshot.data()['photo_url']
               });
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -171,9 +177,14 @@ class _ChatScreenState extends State<ChatScreen> {
                     if (snapshot.hasData) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       var data = snapshot.data.data() as Map;
 
                       String user = data['chatRoomId']
+=======
+                      String user = snapshot.data
+                          .data()['chatRoomId']
+>>>>>>> parent of 80a976c (undo)
 =======
                       String user = snapshot.data
                           .data()['chatRoomId']
@@ -195,10 +206,15 @@ class _ChatScreenState extends State<ChatScreen> {
                             );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           var data = snapshot.data.data() as Map;
 
                           String name = data['Name'];
                           String photoUrl = data['photo_url'];
+=======
+                          String name = snapshot.data.data()['Name'];
+                          String photoUrl = snapshot.data.data()['photo_url'];
+>>>>>>> parent of 80a976c (undo)
 =======
                           String name = snapshot.data.data()['Name'];
                           String photoUrl = snapshot.data.data()['photo_url'];
@@ -459,7 +475,11 @@ class MessageTile extends StatelessWidget {
                           : (dateHours != 0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               ? '$dateHours days ago'
+=======
+                              ? '$dateHours hours ago'
+>>>>>>> parent of 80a976c (undo)
 =======
                               ? '$dateHours hours ago'
 >>>>>>> parent of 80a976c (undo)

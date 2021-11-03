@@ -42,7 +42,11 @@ android {
         applicationId "jameel.kwayes"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         minSdkVersion 20
+=======
+        minSdkVersion 21
+>>>>>>> parent of 80a976c (undo)
 =======
         minSdkVersion 21
 >>>>>>> parent of 80a976c (undo)

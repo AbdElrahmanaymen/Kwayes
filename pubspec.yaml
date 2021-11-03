@@ -5,8 +5,11 @@ publish_to: 'none'
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version: 1.0.0+11
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
 version: 1.0.0+2
@@ -66,6 +69,9 @@ dependencies:
   cached_network_image: ^3.1.0
   file_picker: ^3.0.2+2
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)

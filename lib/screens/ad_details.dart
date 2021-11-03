@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:kwayes/screens/seller_screen.dart';
 import 'package:video_player/video_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,6 +18,8 @@ class AdDetails extends StatefulWidget {
   _AdDetailsState createState() =>
       _AdDetailsState(docId: docId, videoUrl: videoUrl);
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -63,6 +66,9 @@ class AdDetails extends StatefulWidget {
   @override
   _AdDetailsState createState() => _AdDetailsState(isLiked: isLiked);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -70,6 +76,7 @@ class AdDetails extends StatefulWidget {
 
 class _AdDetailsState extends State<AdDetails>
     with SingleTickerProviderStateMixin {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   String docId;
@@ -114,6 +121,8 @@ class _AdDetailsState extends State<AdDetails>
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
   VideoPlayerController _videoController;
 
   bool isLiked = false;
@@ -136,6 +145,9 @@ class _AdDetailsState extends State<AdDetails>
 
   GoogleMapController _controller;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -143,6 +155,7 @@ class _AdDetailsState extends State<AdDetails>
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     _controller = VideoPlayerController.network(
@@ -163,6 +176,10 @@ class _AdDetailsState extends State<AdDetails>
     _loadAd(type: widget.type, media: widget.media);
     checkIfFollowing();
 >>>>>>> parent of 80a976c (undo)
+=======
+    _loadAd(type: widget.type, media: widget.media);
+    checkIfFollowing();
+>>>>>>> parent of 80a976c (undo)
     controller =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
 
@@ -171,6 +188,7 @@ class _AdDetailsState extends State<AdDetails>
   }
 
   @override
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Widget build(BuildContext context) {
@@ -550,6 +568,8 @@ class _AdDetailsState extends State<AdDetails>
             }
           },
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
   void dispose() {
@@ -990,6 +1010,9 @@ class _AdDetailsState extends State<AdDetails>
             ),
           ],
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -999,7 +1022,10 @@ class _AdDetailsState extends State<AdDetails>
   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
 
@@ -1128,6 +1154,9 @@ getChatRoomId(String a, String b) {
     return "$a\_$b";
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)

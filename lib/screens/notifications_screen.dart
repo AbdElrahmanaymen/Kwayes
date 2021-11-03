@@ -2,11 +2,15 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import 'package:kwayes/model/ad_minimized.dart';
 // import 'package:kwayes/model/video_list_data.dart';
 // import 'package:kwayes/services/ReusableVideoListController.dart';
 // import 'package:kwayes/widgets/ad_minimized_video.dart';
 // import 'package:kwayes/widgets/resuable_video_player.dart';
+=======
+import 'package:kwayes/localization/localization_constants.dart';
+>>>>>>> parent of 80a976c (undo)
 =======
 import 'package:kwayes/localization/localization_constants.dart';
 >>>>>>> parent of 80a976c (undo)
@@ -75,6 +79,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     return Scaffold(
       backgroundColor: Colors.white,
       // body: Container(
@@ -138,6 +143,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
     var lang = Localizations.localeOf(context).languageCode;
     return SafeArea(
       child: Scaffold(
@@ -160,6 +167,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
       ),
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)

@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 
 class AddScreen extends StatefulWidget {
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
 import 'package:flutter/foundation.dart';
@@ -17,6 +20,9 @@ class AddScreen extends StatefulWidget {
   final List<CameraDescription> cameras;
   AddScreen({@required this.cameras});
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -27,10 +33,13 @@ class AddScreen extends StatefulWidget {
 class _AddScreenState extends State<AddScreen> {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   @override
   Widget build(BuildContext context) {
     return Scaffold();
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
   CameraController _cameraController;
@@ -180,6 +189,9 @@ class _AddScreenState extends State<AddScreen> {
           ),
         ));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)

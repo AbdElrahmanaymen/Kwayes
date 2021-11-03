@@ -1,5 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import 'package:camera/camera.dart';
+>>>>>>> parent of 80a976c (undo)
 =======
 import 'package:camera/camera.dart';
 >>>>>>> parent of 80a976c (undo)
@@ -21,6 +25,11 @@ import 'package:kwayes/widgets/gradient_text.dart';
 import 'dart:math' as math;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+import 'package:kwayes/widgets/navigation_drawer_widget.dart';
+>>>>>>> parent of 80a976c (undo)
 =======
 
 import 'package:kwayes/widgets/navigation_drawer_widget.dart';
@@ -41,6 +50,11 @@ class HomeScreen extends StatefulWidget {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+>>>>>>> parent of 80a976c (undo)
 =======
 final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -87,6 +101,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   @override
   void initState() {
@@ -114,6 +129,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   }
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +138,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     return Scaffold(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      key: _scaffoldKey,
+      drawer: NavigationDrawerWidget(),
+>>>>>>> parent of 80a976c (undo)
 =======
       key: _scaffoldKey,
       drawer: NavigationDrawerWidget(),
@@ -160,6 +182,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     Color.fromRGBO(214, 41, 118, 1)
                   ]),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 80a976c (undo)
             ),
           ),
           onPressed: () {
@@ -167,7 +192,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 context,
                 MaterialPageRoute(
 <<<<<<< HEAD
+<<<<<<< HEAD
                     builder: (BuildContext context) => AddScreen()));
+=======
+                    builder: (BuildContext context) => AddScreen(
+                          cameras: cameras,
+                        )));
+>>>>>>> parent of 80a976c (undo)
 =======
                     builder: (BuildContext context) => AddScreen(
                           cameras: cameras,
@@ -177,6 +208,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+<<<<<<< HEAD
 <<<<<<< HEAD
       bottomNavigationBar: Container(
         height: 70,
@@ -195,6 +227,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 5),
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
       bottomNavigationBar: BottomAppBar(
         notchMargin: 0,
         shape: AutomaticNotchedShape(
@@ -213,6 +247,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
+<<<<<<< HEAD
 >>>>>>> parent of 80a976c (undo)
 =======
             ),
@@ -246,6 +281,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -310,6 +347,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       currentTab = 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       currentScreen = DashBoardScreen();
 =======
                       currentScreen =
@@ -318,6 +356,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     });
                   },
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
                       currentScreen =
                           DashBoardScreen(scaffoldKey: _scaffoldKey);
                     });
@@ -395,6 +435,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             Alignment(-0.2368917167186737, 0.07294762879610062),
                         colors: [Colors.white, Colors.white]),
                   ),
+<<<<<<< HEAD
 >>>>>>> parent of 80a976c (undo)
                 ),
                 MaterialButton(
@@ -520,12 +561,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   },
                 ),
 >>>>>>> parent of 80a976c (undo)
+=======
+                ),
+>>>>>>> parent of 80a976c (undo)
                 MaterialButton(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       GradientIcon(
+<<<<<<< HEAD
 <<<<<<< HEAD
                         (currentTab == 2)
                             ? 'assets/images/icons/messages.png'
@@ -534,6 +579,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         (currentTab == 3)
                             ? 'assets/images/icons/profile.png'
                             : 'assets/images/icons/profile_unselected.png',
+>>>>>>> parent of 80a976c (undo)
+=======
+                        (currentTab == 2)
+                            ? 'assets/images/icons/messages.png'
+                            : 'assets/images/icons/messages_unselected.png',
 >>>>>>> parent of 80a976c (undo)
                         24,
                         LinearGradient(
@@ -544,17 +594,23 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 80a976c (undo)
                               (currentTab == 2)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
                                   : Color(0xFF484451),
                               (currentTab == 2)
+<<<<<<< HEAD
 =======
                               (currentTab == 3)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
                                   : Color(0xFF484451),
                               (currentTab == 3)
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
                                   ? Color.fromRGBO(214, 41, 118, 1)
                                   : Color(0xFF484451)
@@ -565,9 +621,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       ),
                       GradientText(
 <<<<<<< HEAD
+<<<<<<< HEAD
                         getTranslated(context, 'MessageNavigationBar'),
 =======
                         getTranslated(context, 'ProfileNavigationBar'),
+>>>>>>> parent of 80a976c (undo)
+=======
+                        getTranslated(context, 'MessageNavigationBar'),
 >>>>>>> parent of 80a976c (undo)
                         TextStyle(
                             color: Colors.white,
@@ -582,6 +642,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 80a976c (undo)
                               (currentTab == 2)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
@@ -617,6 +680,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             end: Alignment(
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
                               (currentTab == 3)
@@ -628,6 +694,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   : Color(0xFF484451)
                             ]),
                       ),
+<<<<<<< HEAD
 <<<<<<< HEAD
                       SizedBox(
                         height: 10,
@@ -656,6 +723,34 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             ]),
                       ),
 =======
+>>>>>>> parent of 80a976c (undo)
+=======
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+                        getTranslated(context, 'ProfileNavigationBar'),
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
 >>>>>>> parent of 80a976c (undo)
                     ],
                   ),

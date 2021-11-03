@@ -52,6 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   Widget build(BuildContext context) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -62,6 +63,8 @@ class _ProfileScreenState extends State<ProfileScreen>
               },
               icon: Icon(Icons.logout))
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
     var lang = Localizations.localeOf(context).languageCode;
@@ -712,6 +715,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                 }
               })
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)

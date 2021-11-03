@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:kwayes/model/ad_minimized.dart';
 import 'package:kwayes/model/video_list_data.dart';
 import 'dart:math' as math;
@@ -13,12 +14,17 @@ import 'package:kwayes/widgets/ad_minimized_video.dart';
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
 import 'package:kwayes/model/ad.dart';
 import 'dart:math' as math;
 
 import 'package:kwayes/widgets/ad_minimized.dart';
 import 'package:kwayes/widgets/gradient_icon.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -27,6 +33,7 @@ class SellerScreen extends StatefulWidget {
   final String email;
   final String name;
   final String photo;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -90,6 +97,8 @@ class _SellerScreenState extends State<SellerScreen> {
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
   final String myUser;
   final bool isFollowing;
 
@@ -139,6 +148,9 @@ class _SellerScreenState extends State<SellerScreen> {
         .where('User', isEqualTo: email)
         .snapshots();
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -146,6 +158,7 @@ class _SellerScreenState extends State<SellerScreen> {
 
   @override
   void initState() {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     loadAds();
@@ -161,11 +174,16 @@ class _SellerScreenState extends State<SellerScreen> {
 =======
 =======
 >>>>>>> parent of 80a976c (undo)
+=======
+>>>>>>> parent of 80a976c (undo)
     checkIfFollowing();
     super.initState();
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -175,7 +193,10 @@ class _SellerScreenState extends State<SellerScreen> {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
   handleFollowUser() {
@@ -213,6 +234,9 @@ class _SellerScreenState extends State<SellerScreen> {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -271,6 +295,7 @@ class _SellerScreenState extends State<SellerScreen> {
                     builder: (context, snapshot) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       String status = snapshot.data.data()['Status'];
                       return Container(
                         width: 77,
@@ -318,6 +343,8 @@ class _SellerScreenState extends State<SellerScreen> {
                         ),
                       );
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
                       if (!snapshot.hasData) {
@@ -373,6 +400,9 @@ class _SellerScreenState extends State<SellerScreen> {
                         );
                       }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -400,6 +430,7 @@ class _SellerScreenState extends State<SellerScreen> {
                               icon: ImageIcon(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 AssetImage(
                                     'assets/images/icons/add_friend.png'),
                                 color: Colors.white,
@@ -407,6 +438,8 @@ class _SellerScreenState extends State<SellerScreen> {
                               ),
                               onPressed: () {}),
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
                                 AssetImage((isFollowing)
@@ -423,6 +456,9 @@ class _SellerScreenState extends State<SellerScreen> {
                                 }
                               }),
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
@@ -465,6 +501,7 @@ class _SellerScreenState extends State<SellerScreen> {
             SizedBox(
               height: 22,
             ),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             NotificationListener<ScrollNotification>(
@@ -522,6 +559,8 @@ class _SellerScreenState extends State<SellerScreen> {
               ),
             ),
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
             StreamBuilder<QuerySnapshot>(
@@ -618,6 +657,9 @@ class _SellerScreenState extends State<SellerScreen> {
                   }
                 }),
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 =======
 >>>>>>> parent of 80a976c (undo)
