@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import 'package:camera/camera.dart';
+>>>>>>> parent of 80a976c (undo)
 =======
 import 'package:camera/camera.dart';
 >>>>>>> parent of 80a976c (undo)
@@ -16,6 +20,11 @@ import 'package:kwayes/widgets/gradient_icon.dart';
 import 'package:kwayes/widgets/gradient_text.dart';
 import 'dart:math' as math;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+import 'package:kwayes/widgets/navigation_drawer_widget.dart';
+>>>>>>> parent of 80a976c (undo)
 =======
 
 import 'package:kwayes/widgets/navigation_drawer_widget.dart';
@@ -31,6 +40,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+>>>>>>> parent of 80a976c (undo)
 =======
 final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -72,6 +86,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       _myStatus('offline');
     }
   }
+<<<<<<< HEAD
 
   @override
   void initState() {
@@ -97,12 +112,19 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       _myStatus('offline');
     }
   }
+=======
+>>>>>>> parent of 80a976c (undo)
 
   @override
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;
     return Scaffold(
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      key: _scaffoldKey,
+      drawer: NavigationDrawerWidget(),
+>>>>>>> parent of 80a976c (undo)
 =======
       key: _scaffoldKey,
       drawer: NavigationDrawerWidget(),
@@ -137,6 +159,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     Color.fromRGBO(149, 46, 191, 0.9800000190734863),
                     Color.fromRGBO(214, 41, 118, 1)
                   ]),
+<<<<<<< HEAD
             ),
           ),
           onPressed: () {
@@ -172,6 +195,39 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 5),
 =======
+      bottomNavigationBar: BottomAppBar(
+        notchMargin: 0,
+        shape: AutomaticNotchedShape(
+            RoundedRectangleBorder(), StadiumBorder(side: BorderSide())),
+        child: Container(
+          height: 65,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+            ],
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+>>>>>>> parent of 80a976c (undo)
+=======
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => AddScreen(
+                          cameras: cameras,
+                        )));
+          },
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         notchMargin: 0,
         shape: AutomaticNotchedShape(
@@ -253,11 +309,17 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     setState(() {
                       currentTab = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
                       currentScreen = DashBoardScreen();
 =======
                       currentScreen =
                           DashBoardScreen(scaffoldKey: _scaffoldKey);
 >>>>>>> parent of 80a976c (undo)
+                    });
+                  },
+=======
+                      currentScreen =
+                          DashBoardScreen(scaffoldKey: _scaffoldKey);
                     });
                   },
                 ),
@@ -321,6 +383,107 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       currentScreen = NotificationsScreen();
                     });
                   },
+                ),
+                Container(
+                  child: GradientIcon(
+                    'assets/images/icons/messages.png',
+                    24,
+                    LinearGradient(
+                        transform: GradientRotation(-180 * (math.pi / 180)),
+                        begin: Alignment(1.396263599395752, 0.2368917167186737),
+                        end:
+                            Alignment(-0.2368917167186737, 0.07294762879610062),
+                        colors: [Colors.white, Colors.white]),
+                  ),
+>>>>>>> parent of 80a976c (undo)
+                ),
+                MaterialButton(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      GradientIcon(
+<<<<<<< HEAD
+                        (currentTab == 1)
+                            ? 'assets/images/icons/notification.png'
+                            : 'assets/images/icons/notification_unselected.png',
+=======
+                        (currentTab == 2)
+                            ? 'assets/images/icons/messages.png'
+                            : 'assets/images/icons/messages_unselected.png',
+>>>>>>> parent of 80a976c (undo)
+                        24,
+                        LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+<<<<<<< HEAD
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 1)
+=======
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 2)
+>>>>>>> parent of 80a976c (undo)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      GradientText(
+<<<<<<< HEAD
+                        getTranslated(context, 'NotificationNavigationBar'),
+=======
+                        getTranslated(context, 'MessageNavigationBar'),
+>>>>>>> parent of 80a976c (undo)
+                        TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                            fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            fontWeight: FontWeight.w500),
+                        gradient: LinearGradient(
+                            transform: GradientRotation(-180 * (math.pi / 180)),
+                            begin: Alignment(
+                                1.396263599395752, 0.2368917167186737),
+                            end: Alignment(
+                                -0.2368917167186737, 0.07294762879610062),
+                            colors: [
+<<<<<<< HEAD
+                              (currentTab == 1)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 1)
+=======
+                              (currentTab == 2)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 2)
+>>>>>>> parent of 80a976c (undo)
+                                  ? Color.fromRGBO(214, 41, 118, 1)
+                                  : Color(0xFF484451)
+                            ]),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    setState(() {
+<<<<<<< HEAD
+                      currentTab = 1;
+                      currentScreen = NotificationsScreen();
+                    });
+                  },
 <<<<<<< HEAD
                 ),
                 Container(
@@ -350,15 +513,28 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   ),
                 ),
 >>>>>>> parent of 80a976c (undo)
+=======
+                      currentTab = 2;
+                      currentScreen = MessagesScreen();
+                    });
+                  },
+                ),
+>>>>>>> parent of 80a976c (undo)
                 MaterialButton(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       GradientIcon(
+<<<<<<< HEAD
                         (currentTab == 2)
                             ? 'assets/images/icons/messages.png'
                             : 'assets/images/icons/messages_unselected.png',
+=======
+                        (currentTab == 3)
+                            ? 'assets/images/icons/profile.png'
+                            : 'assets/images/icons/profile_unselected.png',
+>>>>>>> parent of 80a976c (undo)
                         24,
                         LinearGradient(
                             transform: GradientRotation(-180 * (math.pi / 180)),
@@ -367,11 +543,19 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             end: Alignment(
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
+<<<<<<< HEAD
                               (currentTab == 2)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
                                   : Color(0xFF484451),
                               (currentTab == 2)
+=======
+                              (currentTab == 3)
+                                  ? Color.fromRGBO(
+                                      149, 46, 191, 0.9800000190734863)
+                                  : Color(0xFF484451),
+                              (currentTab == 3)
+>>>>>>> parent of 80a976c (undo)
                                   ? Color.fromRGBO(214, 41, 118, 1)
                                   : Color(0xFF484451)
                             ]),
@@ -380,7 +564,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         height: 10,
                       ),
                       GradientText(
+<<<<<<< HEAD
                         getTranslated(context, 'MessageNavigationBar'),
+=======
+                        getTranslated(context, 'ProfileNavigationBar'),
+>>>>>>> parent of 80a976c (undo)
                         TextStyle(
                             color: Colors.white,
                             fontSize: 8,
@@ -393,6 +581,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             end: Alignment(
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
+<<<<<<< HEAD
                               (currentTab == 2)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
@@ -428,6 +617,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             end: Alignment(
                                 -0.2368917167186737, 0.07294762879610062),
                             colors: [
+=======
+>>>>>>> parent of 80a976c (undo)
                               (currentTab == 3)
                                   ? Color.fromRGBO(
                                       149, 46, 191, 0.9800000190734863)
@@ -437,6 +628,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   : Color(0xFF484451)
                             ]),
                       ),
+<<<<<<< HEAD
                       SizedBox(
                         height: 10,
                       ),
@@ -463,6 +655,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   : Color(0xFF484451)
                             ]),
                       ),
+=======
+>>>>>>> parent of 80a976c (undo)
                     ],
                   ),
                   onPressed: () {

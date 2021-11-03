@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:kwayes/localization/localization_constants.dart';
 import 'package:kwayes/model/ad_minimized.dart';
@@ -13,6 +14,11 @@ import 'package:kwayes/widgets/ad_minimized_video.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kwayes/localization/localization_constants.dart';
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:kwayes/localization/localization_constants.dart';
+>>>>>>> parent of 80a976c (undo)
 import 'package:kwayes/model/ad.dart';
 import 'package:kwayes/screens/wishlist_screen.dart';
 import 'package:kwayes/widgets/ad_minimized.dart';
@@ -20,6 +26,9 @@ import 'package:kwayes/widgets/filter_card.dart';
 import 'package:kwayes/widgets/gradient_icon.dart';
 import 'dart:math' as math;
 import 'package:kwayes/widgets/navigation_drawer_widget.dart';
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 
 class DashBoardScreen extends StatefulWidget {
@@ -30,6 +39,7 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
+<<<<<<< HEAD
 <<<<<<< HEAD
   ReusableVideoListController videoListController;
   List<VideoListData> dataList = [];
@@ -70,6 +80,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       _setupData();
     });
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   String categorySelected = '';
   String query = '';
 
@@ -82,11 +94,15 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         .collection('ads')
         .orderBy('Date', descending: true)
         .snapshots();
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   }
 
   @override
   void initState() {
+<<<<<<< HEAD
 <<<<<<< HEAD
     loadAds();
     super.initState();
@@ -113,16 +129,22 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   }
 
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
     myUser = auth.currentUser;
     super.initState();
   }
 
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   @override
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;
     return SafeArea(
       child: Scaffold(
+<<<<<<< HEAD
 <<<<<<< HEAD
         backgroundColor: Colors.white,
         body: Column(
@@ -581,6 +603,171 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               SizedBox(
                 height: 10,
               ),
+=======
+        drawer: NavigationDrawerWidget(),
+        backgroundColor: Colors.white,
+        body: Builder(builder: (context) {
+          return Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        icon: Image.asset(
+                          'assets/images/icons/filter.png',
+                          width: 19,
+                          height: 18,
+                        ),
+                        onPressed: () {
+                          widget.scaffoldKey.currentState.openDrawer();
+                        }),
+                    IconButton(
+                        icon: Image.asset(
+                          'assets/images/icons/heart.png',
+                          width: 24,
+                          height: 24,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext builder) =>
+                                      WishListScreen()));
+                        }),
+                    Container(
+                      height: 40,
+                      width: MediaQuery.of(context).size.width / 1.8,
+                      child: TextField(
+                        onChanged: (val) {
+                          setState(() {
+                            query = val;
+                          });
+                        },
+                        style: TextStyle(
+                          color: Color(0xFF716B6B),
+                          fontSize: 14,
+                          fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                        ),
+                        strutStyle: StrutStyle(
+                          forceStrutHeight: lang == 'ar' ? true : false,
+                        ),
+                        decoration: InputDecoration(
+                            contentPadding:
+                                EdgeInsets.only(left: 25, right: 25),
+                            hintText: getTranslated(context, 'SearchTxt'),
+                            prefixIcon: Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Image.asset(
+                                'assets/images/icons/search.png',
+                              ),
+                            ),
+                            hintStyle: TextStyle(
+                              color: Color(0xFF716B6B),
+                              fontSize: 14,
+                              fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1, color: Color(0xFFA3A3A3)),
+                              borderRadius: BorderRadius.circular(32),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 1, color: Color(0xFFA3A3A3)),
+                              borderRadius: BorderRadius.circular(32),
+                            )),
+                      ),
+                    ),
+                    IconButton(
+                        icon: Image.asset(
+                          'assets/images/icons/share.png',
+                          width: 24,
+                          height: 24,
+                        ),
+                        onPressed: () {}),
+                  ],
+                ),
+              ),
+              (categorySelected == '')
+                  ? Container(
+                      height: 72,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FilterCard(
+                              getTranslated(context, 'MenFilter'),
+                              'assets/images/backgrounds/men_style.png',
+                              lang, () {
+                            setState(() {
+                              categorySelected = "Men's Fashion";
+                            });
+                          }),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FilterCard(
+                              getTranslated(context, 'WomenFilter'),
+                              'assets/images/backgrounds/woman_style.png',
+                              lang, () {
+                            setState(() {
+                              categorySelected = "Women's Style";
+                            });
+                          }),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FilterCard(
+                              getTranslated(context, 'SmartphoneFilter'),
+                              'assets/images/backgrounds/smartphone.png',
+                              lang, () {
+                            setState(() {
+                              categorySelected = "Smartphone";
+                            });
+                          }),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          FilterCard(
+                              getTranslated(context, 'MultimediaFilter'),
+                              'assets/images/backgrounds/multimedia.png',
+                              lang, () {
+                            setState(() {
+                              categorySelected = "Multimedia";
+                            });
+                          }),
+                          SizedBox(
+                            width: 10,
+                          ),
+                        ],
+                      ),
+                    )
+                  : Row(
+                      children: [
+                        IconButton(
+                            icon: ImageIcon(
+                              AssetImage(lang == 'ar'
+                                  ? 'assets/images/icons/Back_button_ar.png'
+                                  : 'assets/images/icons/Back_button.png'),
+                              size: 20,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                categorySelected = '';
+                              });
+                            })
+                      ],
+                    ),
+              SizedBox(
+                height: 10,
+              ),
+>>>>>>> parent of 80a976c (undo)
               StreamBuilder<QuerySnapshot>(
                   stream: loadAds(),
                   builder: (context, snapshot) {
@@ -683,6 +870,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             ],
           );
         }),
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
       ),
     );

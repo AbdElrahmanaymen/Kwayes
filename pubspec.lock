@@ -10,10 +10,13 @@ packages:
 <<<<<<< HEAD
     version: "2.8.1"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     version: "2.6.1"
 >>>>>>> parent of 3206cfa (Almost complete)
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   better_player:
     dependency: "direct main"
     description:
@@ -21,6 +24,9 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.73"
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   boolean_selector:
     dependency: transitive

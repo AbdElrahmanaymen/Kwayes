@@ -81,16 +81,22 @@ class _ChatScreenState extends State<ChatScreen> {
           .doc(myUser)
           .get()
 <<<<<<< HEAD
+<<<<<<< HEAD
           .then((DocumentSnapshot documentSnapshot) {
         var data = documentSnapshot.data() as Map;
         username = data['Name'];
         photo = data['photo_url'];
       });
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
           .then((DocumentSnapshot documentSnapshot) => {
                 username = documentSnapshot.data()['Name'],
                 photo = documentSnapshot.data()['photo_url']
               });
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
       Map<String, dynamic> messageMap = {
         "message": messageController.text,
@@ -164,9 +170,14 @@ class _ChatScreenState extends State<ChatScreen> {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                       var data = snapshot.data.data() as Map;
 
                       String user = data['chatRoomId']
+=======
+                      String user = snapshot.data
+                          .data()['chatRoomId']
+>>>>>>> parent of 80a976c (undo)
 =======
                       String user = snapshot.data
                           .data()['chatRoomId']
@@ -183,10 +194,15 @@ class _ChatScreenState extends State<ChatScreen> {
                               child: CircularProgressIndicator(),
                             );
 <<<<<<< HEAD
+<<<<<<< HEAD
                           var data = snapshot.data.data() as Map;
 
                           String name = data['Name'];
                           String photoUrl = data['photo_url'];
+=======
+                          String name = snapshot.data.data()['Name'];
+                          String photoUrl = snapshot.data.data()['photo_url'];
+>>>>>>> parent of 80a976c (undo)
 =======
                           String name = snapshot.data.data()['Name'];
                           String photoUrl = snapshot.data.data()['photo_url'];
@@ -442,7 +458,11 @@ class MessageTile extends StatelessWidget {
                           ? '$dateDays days ago'
                           : (dateHours != 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
                               ? '$dateHours days ago'
+=======
+                              ? '$dateHours hours ago'
+>>>>>>> parent of 80a976c (undo)
 =======
                               ? '$dateHours hours ago'
 >>>>>>> parent of 80a976c (undo)

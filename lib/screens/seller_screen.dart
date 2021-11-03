@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:kwayes/model/ad_minimized.dart';
 import 'package:kwayes/model/video_list_data.dart';
 import 'dart:math' as math;
@@ -10,17 +11,23 @@ import 'package:kwayes/services/firebase_storage.dart';
 import 'package:kwayes/widgets/ad_minimized_image.dart';
 import 'package:kwayes/widgets/ad_minimized_video.dart';
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 import 'package:kwayes/model/ad.dart';
 import 'dart:math' as math;
 
 import 'package:kwayes/widgets/ad_minimized.dart';
 import 'package:kwayes/widgets/gradient_icon.dart';
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 
 class SellerScreen extends StatefulWidget {
   final String email;
   final String name;
   final String photo;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   SellerScreen(this.email, this.name, this.photo);
@@ -81,6 +88,8 @@ class _SellerScreenState extends State<SellerScreen> {
   bool _checkCanBuildVideo() {
     return _canBuildVideo;
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   final String myUser;
   final bool isFollowing;
 
@@ -129,11 +138,15 @@ class _SellerScreenState extends State<SellerScreen> {
         .collection('ads')
         .where('User', isEqualTo: email)
         .snapshots();
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   }
 
   @override
   void initState() {
+<<<<<<< HEAD
 <<<<<<< HEAD
     loadAds();
     super.initState();
@@ -146,17 +159,25 @@ class _SellerScreenState extends State<SellerScreen> {
   }
 
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
     checkIfFollowing();
     super.initState();
   }
 
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   Stream<DocumentSnapshot> loadSellerInfo(email) {
     return _firestore.collection('users').doc(email).snapshots();
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   handleFollowUser() {
     setState(() {
       isFollowing = true;
@@ -191,6 +212,9 @@ class _SellerScreenState extends State<SellerScreen> {
     });
   }
 
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
   @override
   Widget build(BuildContext context) {
@@ -246,6 +270,7 @@ class _SellerScreenState extends State<SellerScreen> {
                     stream: loadSellerInfo(email),
                     builder: (context, snapshot) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                       String status = snapshot.data.data()['Status'];
                       return Container(
                         width: 77,
@@ -293,6 +318,8 @@ class _SellerScreenState extends State<SellerScreen> {
                         ),
                       );
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
                       if (!snapshot.hasData) {
                         return Center(
                           child: CircularProgressIndicator(),
@@ -345,6 +372,9 @@ class _SellerScreenState extends State<SellerScreen> {
                           ),
                         );
                       }
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
                     },
                   ),
@@ -369,6 +399,7 @@ class _SellerScreenState extends State<SellerScreen> {
                           IconButton(
                               icon: ImageIcon(
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 AssetImage(
                                     'assets/images/icons/add_friend.png'),
                                 color: Colors.white,
@@ -376,6 +407,8 @@ class _SellerScreenState extends State<SellerScreen> {
                               ),
                               onPressed: () {}),
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
                                 AssetImage((isFollowing)
                                     ? 'assets/images/icons/check-circle.png'
                                     : 'assets/images/icons/add_friend.png'),
@@ -389,6 +422,9 @@ class _SellerScreenState extends State<SellerScreen> {
                                   handleFollowUser();
                                 }
                               }),
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
                           IconButton(
                               icon: ImageIcon(
@@ -429,6 +465,7 @@ class _SellerScreenState extends State<SellerScreen> {
             SizedBox(
               height: 22,
             ),
+<<<<<<< HEAD
 <<<<<<< HEAD
             NotificationListener<ScrollNotification>(
               onNotification: (notification) {
@@ -485,6 +522,8 @@ class _SellerScreenState extends State<SellerScreen> {
               ),
             ),
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
             StreamBuilder<QuerySnapshot>(
                 stream: loadSellerAds(),
                 builder: (context, snapshot) {
@@ -578,6 +617,9 @@ class _SellerScreenState extends State<SellerScreen> {
                     );
                   }
                 }),
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
             SizedBox(
               height: 32,

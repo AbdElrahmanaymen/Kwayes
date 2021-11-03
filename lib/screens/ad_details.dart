@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:kwayes/screens/seller_screen.dart';
 import 'package:video_player/video_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +17,8 @@ class AdDetails extends StatefulWidget {
   _AdDetailsState createState() =>
       _AdDetailsState(docId: docId, videoUrl: videoUrl);
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
@@ -59,11 +62,15 @@ class AdDetails extends StatefulWidget {
       @required this.type});
   @override
   _AdDetailsState createState() => _AdDetailsState(isLiked: isLiked);
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 }
 
 class _AdDetailsState extends State<AdDetails>
     with SingleTickerProviderStateMixin {
+<<<<<<< HEAD
 <<<<<<< HEAD
   String docId;
   String videoUrl;
@@ -105,6 +112,8 @@ class _AdDetailsState extends State<AdDetails>
     );
   }
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   VideoPlayerController _videoController;
 
   bool isLiked = false;
@@ -126,11 +135,15 @@ class _AdDetailsState extends State<AdDetails>
   LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
 
   GoogleMapController _controller;
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
 <<<<<<< HEAD
     _controller = VideoPlayerController.network(
       videoUrl,
@@ -146,6 +159,10 @@ class _AdDetailsState extends State<AdDetails>
     _loadAd(type: widget.type, media: widget.media);
     checkIfFollowing();
 >>>>>>> parent of 80a976c (undo)
+=======
+    _loadAd(type: widget.type, media: widget.media);
+    checkIfFollowing();
+>>>>>>> parent of 80a976c (undo)
     controller =
         AnimationController(vsync: this, duration: Duration(seconds: 1));
 
@@ -154,6 +171,7 @@ class _AdDetailsState extends State<AdDetails>
   }
 
   @override
+<<<<<<< HEAD
 <<<<<<< HEAD
   Widget build(BuildContext context) {
     return Scaffold(
@@ -532,6 +550,8 @@ class _AdDetailsState extends State<AdDetails>
             }
           },
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
   void dispose() {
     _videoController?.dispose();
     super.dispose();
@@ -969,13 +989,19 @@ class _AdDetailsState extends State<AdDetails>
               ),
             ),
           ],
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
         ),
       ),
     );
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 80a976c (undo)
 
   void _loadAd({AdType type, String media}) {
     switch (type) {
@@ -1101,5 +1127,8 @@ getChatRoomId(String a, String b) {
   } else {
     return "$a\_$b";
   }
+<<<<<<< HEAD
+>>>>>>> parent of 80a976c (undo)
+=======
 >>>>>>> parent of 80a976c (undo)
 }

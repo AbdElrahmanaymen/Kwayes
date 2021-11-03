@@ -41,7 +41,11 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "jameel.kwayes"
 <<<<<<< HEAD
+<<<<<<< HEAD
         minSdkVersion 20
+=======
+        minSdkVersion 21
+>>>>>>> parent of 80a976c (undo)
 =======
         minSdkVersion 21
 >>>>>>> parent of 80a976c (undo)
