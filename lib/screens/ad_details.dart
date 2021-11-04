@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:geocoder/geocoder.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kwayes/localization/localization_constants.dart';
 import 'package:kwayes/model/ad.dart';
@@ -543,15 +543,12 @@ class _AdDetailsState extends State<AdDetails>
 
   void _onMapCreated(GoogleMapController _cntlr) async {
     _controller = _cntlr;
-    //final query = "1600 Amphiteatre Parkway, Mountain View";
-    var addresses = await Geocoder.local.findAddressesFromQuery(widget.address);
+    var addresses = await locationFromAddress(widget.address);
     var first = addresses.first;
     _controller.animateCamera(
       CameraUpdate.newCameraPosition(
         CameraPosition(
-            target:
-                LatLng(first.coordinates.latitude, first.coordinates.longitude),
-            zoom: 15),
+            target: LatLng(first.latitude, first.longitude), zoom: 15),
       ),
     );
   }
