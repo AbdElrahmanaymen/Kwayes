@@ -25,7 +25,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   Stream<QuerySnapshot> loadAds() {
     return _firestore
         .collection('ads')
-        .orderBy('Date', descending: true)
+        .where('User', isEqualTo: user.email)
         .snapshots();
   }
 
@@ -92,7 +92,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       padding: EdgeInsets.only(top: 10),
                       child: Container(
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height - 155,
+                        height: MediaQuery.of(context).size.height - 170,
                         child: Stack(
                           children: [
                             Positioned(

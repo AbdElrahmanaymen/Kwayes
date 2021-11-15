@@ -194,10 +194,11 @@ class _PublishScreenState extends State<PublishScreen> {
                   ],
                 ),
               )
-            : SafeArea(
-                child: Scaffold(
-                  backgroundColor: Colors.white,
-                  body: Theme(
+            : Scaffold(
+                backgroundColor: Colors.white,
+                body: Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: Theme(
                     data: Theme.of(context).copyWith(
                         colorScheme:
                             ColorScheme.light(primary: Color(0xFF64D62F))),

@@ -17,11 +17,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.only(top: 32, left: 20, right: 20),
+        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
         child: Column(
           children: [
             Row(
@@ -139,7 +138,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ],
         ),
       ),
-    ));
+    );
   }
 
   GestureDetector buildAccountOptionRow(BuildContext context, String title,

@@ -50,146 +50,145 @@ class _EditMyInformationScreenState extends State<EditMyInformationScreen> {
   @override
   Widget build(BuildContext context) {
     var lang = Localizations.localeOf(context).languageCode;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.only(top: 32, left: 20, right: 20),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: ImageIcon(
+                    AssetImage(lang == 'ar'
+                        ? 'assets/images/icons/Back_button_ar.png'
+                        : 'assets/images/icons/Back_button.png'),
+                    size: 20,
+                    color: Color(0xFF484451),
+                  ),
+                ),
+                Text(
+                  getTranslated(context, 'EditMyInformation'),
+                  strutStyle: StrutStyle(
+                    forceStrutHeight: lang == 'ar' ? true : false,
+                  ),
+                  style: TextStyle(
+                      fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
+                      fontSize: 24,
+                      color: Color(0xFF484451)),
+                ),
+                Container(
+                  width: 20,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 42,
+            ),
+            Form(
+              key: _formKey,
+              child: Column(
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: ImageIcon(
-                      AssetImage(lang == 'ar'
-                          ? 'assets/images/icons/Back_button_ar.png'
-                          : 'assets/images/icons/Back_button.png'),
-                      size: 20,
-                      color: Color(0xFF484451),
+                  buildTextField(
+                      getTranslated(context, 'UserName'), nameController,
+                      (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
+                            .hasMatch(value)) {
+                      return "please write your user name correctly.";
+                    } else {
+                      return null;
+                    }
+                  }, lang),
+                  buildTextField(
+                      getTranslated(context, 'FirstName'), firstNameController,
+                      (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
+                            .hasMatch(value)) {
+                      return "please write your first name correctly.";
+                    } else {
+                      return null;
+                    }
+                  }, lang),
+                  buildTextField(
+                      getTranslated(context, 'LastName'), lastNameController,
+                      (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
+                            .hasMatch(value)) {
+                      return "please write your last name correctly.";
+                    } else {
+                      return null;
+                    }
+                  }, lang),
+                  buildTextField(
+                      getTranslated(context, 'EmailAddress'), emailController,
+                      (value) {
+                    if (value == null ||
+                        value.isEmpty ||
+                        !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(value)) {
+                      return "please write your email address correctly.";
+                    } else {
+                      return null;
+                    }
+                  }, lang),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Container(
+                      height: 50,
+                      width: MediaQuery.of(context).size.width - 100,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              primary: Color(0xFF64D62F),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              )),
+                          onPressed: () async {
+                            if (_formKey.currentState.validate()) {
+                              await _firestore
+                                  .collection('users')
+                                  .doc(user.email)
+                                  .update({
+                                'Name': nameController.text,
+                                'Email': emailController.text,
+                                'First Name': firstNameController.text,
+                                'Last Name': lastNameController.text,
+                              });
+                            }
+                          },
+                          child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Text(getTranslated(context, 'SaveBtn'),
+                                  strutStyle: StrutStyle(
+                                    forceStrutHeight:
+                                        lang == 'ar' ? true : false,
+                                  ),
+                                  style: TextStyle(
+                                      color: Color(0xFFFFF6F6),
+                                      fontSize: 14,
+                                      fontFamily:
+                                          lang == 'ar' ? 'DIN' : 'Roboto',
+                                      fontWeight: FontWeight.w500)))),
                     ),
                   ),
-                  Text(
-                    getTranslated(context, 'EditMyInformation'),
-                    strutStyle: StrutStyle(
-                      forceStrutHeight: lang == 'ar' ? true : false,
-                    ),
-                    style: TextStyle(
-                        fontFamily: lang == 'ar' ? 'DIN' : 'Roboto',
-                        fontSize: 24,
-                        color: Color(0xFF484451)),
-                  ),
-                  Container(
-                    width: 20,
-                  ),
+                  SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
-              SizedBox(
-                height: 42,
-              ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    buildTextField(
-                        getTranslated(context, 'UserName'), nameController,
-                        (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
-                              .hasMatch(value)) {
-                        return "please write your user name correctly.";
-                      } else {
-                        return null;
-                      }
-                    }, lang),
-                    buildTextField(getTranslated(context, 'FirstName'),
-                        firstNameController, (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
-                              .hasMatch(value)) {
-                        return "please write your first name correctly.";
-                      } else {
-                        return null;
-                      }
-                    }, lang),
-                    buildTextField(
-                        getTranslated(context, 'LastName'), lastNameController,
-                        (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
-                              .hasMatch(value)) {
-                        return "please write your last name correctly.";
-                      } else {
-                        return null;
-                      }
-                    }, lang),
-                    buildTextField(
-                        getTranslated(context, 'EmailAddress'), emailController,
-                        (value) {
-                      if (value == null ||
-                          value.isEmpty ||
-                          !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                              .hasMatch(value)) {
-                        return "please write your email address correctly.";
-                      } else {
-                        return null;
-                      }
-                    }, lang),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Container(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width - 100,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: Color(0xFF64D62F),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                )),
-                            onPressed: () async {
-                              if (_formKey.currentState.validate()) {
-                                await _firestore
-                                    .collection('users')
-                                    .doc(user.email)
-                                    .update({
-                                  'Name': nameController.text,
-                                  'Email': emailController.text,
-                                  'First Name': firstNameController.text,
-                                  'Last Name': lastNameController.text,
-                                });
-                              }
-                            },
-                            child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 10, right: 10),
-                                child: Text(getTranslated(context, 'SaveBtn'),
-                                    strutStyle: StrutStyle(
-                                      forceStrutHeight:
-                                          lang == 'ar' ? true : false,
-                                    ),
-                                    style: TextStyle(
-                                        color: Color(0xFFFFF6F6),
-                                        fontSize: 14,
-                                        fontFamily:
-                                            lang == 'ar' ? 'DIN' : 'Roboto',
-                                        fontWeight: FontWeight.w500)))),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

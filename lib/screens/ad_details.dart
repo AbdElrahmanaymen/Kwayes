@@ -63,9 +63,9 @@ class _AdDetailsState extends State<AdDetails>
   final followersRef = FirebaseFirestore.instance.collection('followers');
   final followingRef = FirebaseFirestore.instance.collection('following');
 
-  // LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
+  LatLng _initialcameraposition = LatLng(20.5937, 78.9629);
 
-  // GoogleMapController _controller;
+  GoogleMapController _controller;
 
   @override
   void initState() {
@@ -486,29 +486,29 @@ class _AdDetailsState extends State<AdDetails>
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w500)),
                           ),
-                          // Padding(
-                          //   padding: const EdgeInsets.only(top: 20),
-                          //   child: Container(
-                          //     height: 158,
-                          //     child: ClipRRect(
-                          //       borderRadius: BorderRadius.circular(16),
-                          //       child: GoogleMap(
-                          //         initialCameraPosition: CameraPosition(
-                          //             target: _initialcameraposition),
-                          //         myLocationButtonEnabled: false,
-                          //         mapToolbarEnabled: false,
-                          //         zoomControlsEnabled: false,
-                          //         zoomGesturesEnabled: false,
-                          //         tiltGesturesEnabled: false,
-                          //         rotateGesturesEnabled: false,
-                          //         scrollGesturesEnabled: false,
-                          //         mapType: MapType.normal,
-                          //         onMapCreated: _onMapCreated,
-                          //         myLocationEnabled: true,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Container(
+                              height: 158,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: GoogleMap(
+                                  initialCameraPosition: CameraPosition(
+                                      target: _initialcameraposition),
+                                  myLocationButtonEnabled: false,
+                                  mapToolbarEnabled: false,
+                                  zoomControlsEnabled: false,
+                                  zoomGesturesEnabled: false,
+                                  tiltGesturesEnabled: false,
+                                  rotateGesturesEnabled: false,
+                                  scrollGesturesEnabled: false,
+                                  mapType: MapType.normal,
+                                  onMapCreated: _onMapCreated,
+                                  myLocationEnabled: true,
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -541,17 +541,17 @@ class _AdDetailsState extends State<AdDetails>
     }
   }
 
-  // void _onMapCreated(GoogleMapController _cntlr) async {
-  //   _controller = _cntlr;
-  //   var addresses = await locationFromAddress(widget.address);
-  //   var first = addresses.first;
-  //   _controller.animateCamera(
-  //     CameraUpdate.newCameraPosition(
-  //       CameraPosition(
-  //           target: LatLng(first.latitude, first.longitude), zoom: 15),
-  //     ),
-  //   );
-  // }
+  void _onMapCreated(GoogleMapController _cntlr) async {
+    _controller = _cntlr;
+    var addresses = await locationFromAddress(widget.address);
+    var first = addresses.first;
+    _controller.animateCamera(
+      CameraUpdate.newCameraPosition(
+        CameraPosition(
+            target: LatLng(first.latitude, first.longitude), zoom: 15),
+      ),
+    );
+  }
 
   Stream<DocumentSnapshot> loadAdProfile(user) {
     return _firestore.collection('users').doc(user).snapshots();

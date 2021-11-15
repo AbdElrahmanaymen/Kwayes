@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: Container(
-        height: 70,
+        height: 80,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
