@@ -22,8 +22,12 @@
     "alreadyHaveAnAccount": "already have an account?  ",
     "LoginTxt": "Login",
     "FullNameError": "please write your full name correctly.",
+    "UserNameError": "please write your user name correctly.",
+    "FirstNameError": "please write your first name correctly.",
+    "LastNameError": "please write your last name correctly.",
     "EmailAddressError": "please write your email address correctly.",
     "PasswordError": "password length must be more than 8.",
+    "CurrentPasswordError": "please double check your current password.",
     "LoginError": "Hmm,this email address is wrong.",
     "SearchTxt": "search",
     "HomeNavigationBar": "Home",
@@ -90,5 +94,7 @@
     "CallMeOption": "Add Call Me Option",
     "AddMessageOption": "Add Message Option",
     "NextBtn": "Next",
-    "NoAds": "No ads in the meantime"
+    "NoAds": "No ads in the meantime",
+    "OldPassword": "Old Password",
+    "NewPassword": "New Password"
 }

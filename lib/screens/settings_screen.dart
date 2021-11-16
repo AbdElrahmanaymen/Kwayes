@@ -134,6 +134,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 lang),
             builOptionRow(context, getTranslated(context, 'SignOut'), () {
               _auth.signOut();
+              Navigator.pushNamed(context, "/Wrapper");
             }, lang),
           ],
         ),

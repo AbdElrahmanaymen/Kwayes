@@ -21,7 +21,7 @@ class _LogInScreenState extends State<LogInScreen> {
 
   bool _inactive = false;
 
-  final _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final AuthService _auth = AuthService();
 

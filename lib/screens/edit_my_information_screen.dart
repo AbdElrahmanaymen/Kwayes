@@ -101,7 +101,7 @@ class _EditMyInformationScreenState extends State<EditMyInformationScreen> {
                         value.isEmpty ||
                         RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
                             .hasMatch(value)) {
-                      return "please write your user name correctly.";
+                      return getTranslated(context, 'UserNameError');
                     } else {
                       return null;
                     }
@@ -113,7 +113,7 @@ class _EditMyInformationScreenState extends State<EditMyInformationScreen> {
                         value.isEmpty ||
                         RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
                             .hasMatch(value)) {
-                      return "please write your first name correctly.";
+                      return getTranslated(context, 'FirstNameError');
                     } else {
                       return null;
                     }
@@ -125,7 +125,7 @@ class _EditMyInformationScreenState extends State<EditMyInformationScreen> {
                         value.isEmpty ||
                         RegExp(r'[!@#<>?":_`~;[\]\\|=+)(*&^%0-9-]')
                             .hasMatch(value)) {
-                      return "please write your last name correctly.";
+                      return getTranslated(context, 'LastNameError');
                     } else {
                       return null;
                     }
@@ -137,7 +137,7 @@ class _EditMyInformationScreenState extends State<EditMyInformationScreen> {
                         value.isEmpty ||
                         !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                             .hasMatch(value)) {
-                      return "please write your email address correctly.";
+                      return getTranslated(context, 'EmailAddressError');
                     } else {
                       return null;
                     }

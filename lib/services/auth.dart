@@ -142,6 +142,25 @@ class AuthService {
     }
   }
 
+  Future<bool> validateCurrentPassword(String password) async {
+    var firebaseUser = _auth.currentUser;
+    var authCredentials = EmailAuthProvider.credential(
+        email: firebaseUser.email, password: password);
+
+    try {
+      var authResult =
+          await firebaseUser.reauthenticateWithCredential(authCredentials);
+      return authResult.user != null;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future updateUserPassword(String password) async {
+    var firebaseUser = _auth.currentUser;
+    firebaseUser.updatePassword(password);
+  }
+
   //Sign out
   Future signOut() async {
     try {
